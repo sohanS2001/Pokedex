@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './Style/DetailsPage.css';
 
 const DetailsPage = () => {
@@ -60,7 +60,10 @@ const DetailsPage = () => {
     <div className="container">
       <div className="details">
         <h2>{pokemonDetails.name}</h2>
-        <button onClick={handleBookmark}>{bookmarked ? 'Remove Bookmark' : 'Bookmark'}</button>
+        {/* <button onClick={handleBookmark}>{bookmarked ? 'Remove Bookmark' : 'Bookmark'}</button> */}
+        <Link to="/">
+          <button>Go Back</button>
+        </Link>
         {imageUrl && <img src={imageUrl} alt={pokemonDetails.name} className="pokemon-image" />}
         <p>Height: {pokemonDetails.height}</p>
         <p>Weight: {pokemonDetails.weight}</p>
